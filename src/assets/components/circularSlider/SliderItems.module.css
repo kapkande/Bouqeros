@@ -1,0 +1,35 @@
+.item {
+    width: 600px;
+    height: 246px;
+    background-color: rgba(240, 255, 255, 0.13);
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+
+.item:nth-child(1) {
+    opacity: 1;
+}
+
+.item:nth-child(2) {
+    opacity: 1;
+    transform: translate(50%, 0%);
+}
+
+.item:nth-child(3) {
+    opacity: 1;
+}
+
+.image {
+    width: 64px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 243px 0 0;
+}
+
+.infoBlock {
+    padding: 0 5px;
+}
