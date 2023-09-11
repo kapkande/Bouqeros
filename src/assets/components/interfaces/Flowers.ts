@@ -3,5 +3,5 @@ export interface Flowers {
     src: string,
     const: string,
     info: string,
-    id: string
+    id: number
 }
