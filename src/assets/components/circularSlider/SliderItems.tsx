@@ -1,18 +1,11 @@
-// import { Flowers } from '../interfaces/Flowers';
-// import styles from './SliderItems.module.css';
 import flowers from '../../../data';
-
 import './SliderItems.css';
-import { ReactEventHandler, useState } from 'react';
-
-
+import { useState } from 'react';
 
 export default function CreateSlidersItems() {
-    const [active, setActive] = useState(false);
-    const [scrollTop, setScrollTop] = useState(null);
+    // const [active, setActive] = useState(false);
+    // const [scrollTop, setScrollTop] = useState(null);
     const [position, setPosition] = useState([0, 1, 2, 3]);
-
-
 
     const [num, setNum] = useState(0);
 
@@ -20,23 +13,23 @@ export default function CreateSlidersItems() {
     //     position[i] = i
     // }
 
-
     function handleScroll(e: any) {
+        
+        document.querySelector('main')!.style.overflow = "hidden";
         if (e.deltaY > 0) {
-            position.push(+position.splice(0, 1).join())
-            setPosition(position)
-            setNum(position[0])
+            position.push(+position.splice(0, 1).join());
+            setPosition(position);
+            setNum(position[0]);
         } else {
-            position.unshift(+position.splice(position.length - 1, 1).join())
-            setPosition(position)
-            setNum(position[0])
+            position.unshift(+position.splice(position.length - 1, 1).join());
+            setPosition(position);
+            setNum(position[0]);
         }
     }
 
     return (
         <div onWheel={handleScroll}>
             {flowers.map((e, i) =>
-
                 <div className={`flowerItem-${position[i]} flower__item`} key={e.id}>
                     <div
                         style={{
@@ -57,22 +50,6 @@ export default function CreateSlidersItems() {
             )
             }
         </div>
-
-
-
-
     )
 }
 
-// function handleScroll(e: any) {
-//     if (e.deltaY > 0) {
-//         arr.push(+arr.splice(0, 1).join())
-//         setPosition(arr)
-//         console.log(position);
-
-//     } else {
-//         position.unshift(+position.splice(position.length - 1, 1).join())
-
-//     }
-
-// };
