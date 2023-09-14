@@ -1,34 +1,41 @@
-import { Flowers } from "./assets/components/interfaces/Flowers";
+import { IProduct } from "./assets/components/indterfaceData/IProduct";
 
- const flowers:Flowers[] = [
-    {
-        name: 'f1',
-        src: 'https://img2.freepng.ru/20180404/yrq/kisspng-blue-rose-garden-roses-rosa-gallica-clip-art-red-rose-decorative-5ac4e221cac856.2416744915228523858306.jpg',
-        const: '13123',
-        info: 'Роза Среди первоцветов пролеска (сцилла) занимает почетное место как самый неприхотливый цветок. Он выпускает из земли перистые листья и цветонос сразу после того, как снег сходит с земли. В марте–апреле пролеска зацветает голубыми колокольчиками, расположенными на дуговидном стебле. По мере распускания цветки становятся крупнее и выпускают длинные густые тычинки. ',
-        id: 0
 
+export const products: IProduct[] = [
+    {
+        id: 1,
+        title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        price: 109.95,
+        description: "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        category: "men's clothing",
+        image: ["https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg", 'https://i.pinimg.com/originals/34/29/93/342993ef5d6ed08891993031c5e3cecc.jpg'],
+        rating: {
+            rate: 3.9,
+            count: 120
+        }
     },
     {
-        name: 'f2',
-        src: 'https://catherineasquithgallery.com/uploads/posts/2021-02/1612734119_34-p-golubie-tsveti-na-prozrachnom-fone-dlya-fo-57.jpg',
-        const: '14123',
-        info: 'херня Среди первоцветов пролеска (сцилла) занимает почетное место как самый неприхотливый цветок. Он выпускает из земли перистые листья и цветонос сразу после того, как снег сходит с земли. В марте–апреле пролеска зацветает голубыми колокольчиками, расположенными на дуговидном стебле. По мере распускания цветки становятся крупнее и выпускают длинные густые тычинки. ',
-        id: 1
+        id: 2,
+        title: "Mens Casual Premium Slim Fit T-Shirts ",
+        price: 22.3,
+        description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+        category: "men's clothing",
+        image: ["https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg", 'https://www.wallpaperflare.com/static/948/57/70/phone-communication-wire-white-wallpaper.jpg'],
+        rating: {
+            rate: 4.1,
+            count: 259
+        }
     },
     {
-        name: 'f3',
-        src: 'https://top-fon.com/uploads/posts/2023-01/1675106642_top-fon-com-p-tsveti-bez-fona-dlya-prezentatsii-69.png',
-        const: '1000',
-        info: 'Среди первоцветов пролеска (сцилла) занимает почетное место как самый неприхотливый цветок. Он выпускает из земли перистые листья и цветонос сразу после того, как снег сходит с земли. В марте–апреле пролеска зацветает голубыми колокольчиками, расположенными на дуговидном стебле. По мере распускания цветки становятся крупнее и выпускают длинные густые тычинки. ',
-        id: 2
-    },
-    {
-        name: 'f4',
-        src: 'https://img2.freepng.ru/20180427/lvw/kisspng-garden-roses-blue-rose-rosa-gallica-5ae3e097cdf905.7855945715248836078437.jpg',
-        const: '10',
-        info: 'голубая роза Среди первоцветов пролеска (сцилла) занимает почетное место как самый неприхотливый цветок. Он выпускает из земли перистые листья и цветонос сразу после того, как снег сходит с земли. В марте–апреле пролеска зацветает голубыми колокольчиками, расположенными на дуговидном стебле. По мере распускания цветки становятся крупнее и выпускают длинные густые тычинки. ',
-        id: 3
-    },
+        id: 3,
+        title: "Mens Cotton Jacket",
+        price: 55.99,
+        description: "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+        category: "men's clothing",
+        image: ["https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg", 'https://sun9-40.userapi.com/impg/VKzMcEU5BjhYYO24uoZmqweJnYCrGCmQYLmTyg/qf4OeRhUgSQ.jpg?size=1280x853&quality=96&sign=251ed8118fd4d1b5a90a29c82be17b82&c_uniq_tag=RAPLKWfaReb7FusyEQFWSIPgqUcucbBvyOYxuuCre-4&type=album'],
+        rating: {
+            rate: 4.7,
+            count: 500
+        }
+    }
 ]
-export default flowers;

@@ -1,0 +1,78 @@
+.like {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 209px;
+    opacity: 0;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: all 0.5s;
+}
+
+.item {
+    margin: 2% 0;
+    flex: 0 0 261px;
+    cursor: pointer;
+}
+
+.imege {
+    width: 261px;
+    height: 261px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+.item:hover .like {
+    opacity: 1;
+    transition: all 0.3s;
+    box-shadow: 0px ;
+    filter: 0px;
+}
+
+.item:hover {
+    transition: all 0.5s;
+    background-color: rgba(255, 255, 255, 0.863);
+    box-shadow: 0px 5px 10px 0px rgba(175, 174, 174, 0.5);
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+}
+
+.info {
+    padding: 15px 5px 5px 5px;
+}
+
+.price {
+    color: #ff0043;
+}
+.like {
+    background-image: url('../../../../public/icons/like.svg');
+}
+.lodading{
+    margin: 0 auto;
+    width: 100%;
+}
+.range{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 83% auto 0 auto;
+}
+.stick{
+    background-color: rgb(7, 206, 83);
+    height: 4px;
+    flex: 1 1 100%;
+    border-radius: 15%;
+    margin: 0 5px;
+}
+.stick:hover{
+    background-color: rgb(14, 59, 31);
+}

@@ -6,12 +6,12 @@ import Catalog from "./assets/components/catalog/Сatalog";
 import Products from "./assets/components/products/Products";
 
 export default function App() {
-    const id:number = 1
+    // const id:number = 1
     return (
         <main>
             <Header></Header>
             <Routes>
-                <Route path="/flowers" element={<CircularSlider />} />
+                {/* <Route path="/flowers" element={<CircularSlider />} /> */}
                 
                 <Route path="/" element={<Products></Products>} />
                 {/* <Route path="/" element={<Product id={1}></Product>} /> */}
