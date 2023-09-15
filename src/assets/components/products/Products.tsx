@@ -3,63 +3,42 @@ import { useProducts } from "../hucks/useProducts";
 import { IProduct } from "../indterfaceData/IProduct";
 import styles from "./Products.module.css";
 
-import './index.css'
 import Range from "./Range";
 import { products } from "../../../data";
 
-export default function setProducts() {
+interface IProductsProps { }
 
+export default function Products(props: IProductsProps) {
+    const [activeImages, setActiveImages] = useState<{ [id: number]: string }>({});
 
-    // const { products, lodading, error } = useProducts();
-
-    const [activeImage, setActiveImage] = useState('')
-    const [idItem, setIdItem] = useState(-1)
-    // const [classItem, setClassItem] = useState('products__item');
-    console.log( products);
-    // function onMouseOver(e:any) {
-    //     e.target.classList.add('active')
-    // }
-
-    // function onMouseOut(e:any) {
-    //     e.target.classList.remove('active')
-    // }
-    function onClick(imageLink: string, idItem: number) {
-        setActiveImage(imageLink)
-        setIdItem(idItem)
-
+    function handleClick(imageLink: string, id: number) {
+        setActiveImages((prev) => ({ ...prev, [id]: imageLink }));
     }
-
-    console.log(activeImage);
+console.log(activeImages);
     return (
         <div className={styles.wrapper}>
-            {/* {lodading && <h1 className={styles.lodading}>Loading...</h1>}
-            {error && <h1>{error}</h1>} */}
-
-            {products && products.map((e: IProduct, i: number) => {
-                if (i > 4) { return }
-                return (
+            {products.slice(0, 5).map((product: IProduct) => (
+                <div key={product.id} className={styles.item}>
                     <div
-                        key={e.id}
-                        className={styles.item}
+                        className={styles.image}
+                        style={{
+                            backgroundImage: `url(${activeImages[product.id] || product.image[0]})`,
+                        }}
                     >
-
-                        <div
-                            className={styles.imege}
-                            style={{
-                                backgroundImage: `url(${idItem == e.id ? activeImage : e.image[0]})`
-                            }}
-                        >
-                            <div className={styles.like}></div>
-                            <Range arr={e.image} element={e} onClick={onClick} ></Range>
-                            {/* {isActive && <h1 className={styles.asd}></h1>} */}
-                        </div>
-                        <div className={styles.info}>
-                            <div className={styles.title}>{e.title}</div>
-                            <div className={styles.price}>{e.price}$</div>
-                        </div>
+                        <div className={styles.like}></div>
+                        <Range
+                            element={product}
+                            arr={product.image}
+                            onClick={handleClick}
+                            
+                        />
                     </div>
-                );
-            })}
+                    <div className={styles.info}>
+                        <div className={styles.title}>{product.title}</div>
+                        <div className={styles.price}>{product.price}$</div>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }

@@ -4,16 +4,16 @@ import { IProduct } from "../indterfaceData/IProduct";
 
 export function useProducts() {
     const [products, setProducts] = useState<IProduct[]>([]);
-    const [lodading, setLodading] = useState(false);
+    const [loading , setLoading ] = useState(false);
     const [error, setError] = useState('');
 
     async function fetchProduct() {
         try {
             setError('')
-            setLodading(true)
+            setLoading (true)
             const respons = await axios.get<IProduct[]>(`https://fakestoreapi.com/products`)
             setProducts(respons.data)
-            setLodading(false)
+            setLoading (false)
         } catch (e: unknown) {
             const error = e as AxiosError
             setError(error.message)
@@ -23,5 +23,5 @@ export function useProducts() {
     useEffect(() => {
         fetchProduct()
     }, [])
-    return {products, lodading, error}
+    return {products, loading, error}
 }

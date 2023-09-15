@@ -8,16 +8,16 @@ import { Iproduct } from '../indterfaceData/IProduct'
 
 export default function Product(id: number) {
     const [product, setProducts] = useState<Iproduct>();
-    const [lodading, setLodading] = useState(false);
+    const [loading , setLoading ] = useState(false);
     const [error, setError] = useState('');
 
     async function fetchProduct() {
         try {
             setError('')
-            setLodading(true)
+            setLoading (true)
             const respons = await axios.get<Iproduct>(`https://fakestoreapi.com/products/1`)
             setProducts(respons.data)
-            setLodading(false)
+            setLoading (false)
         } catch (e: unknown) {
             const error = e as AxiosError
             setError(error.message)
@@ -35,7 +35,7 @@ export default function Product(id: number) {
     // console.log(product.image);
     return (
         <div className={styles.product}>
-            {lodading && <h1>Loading...</h1>}
+            {loading  && <h1>Loading...</h1>}
             {error && <h1>{error}</h1>}
             <SliderProduct arr={arr}></SliderProduct>
             <ImageProduct image={product.image}></ImageProduct>
